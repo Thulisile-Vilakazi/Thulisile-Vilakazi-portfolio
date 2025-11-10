@@ -68,28 +68,55 @@ body{
 .body{color:var(--muted); font-size:var(--step-0)}
 .grid{display:grid; gap:24px}
 
-..site-head {
-  position: fixed;         /* stays on top at all times */
+.site-header {
+  position: fixed;                 /* always visible */
   top: 0;
   left: 0;
   right: 0;
-  background: white;       /* solid background for contrast */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  z-index: 100;
-}
-body {
-  padding-top: 70px;       /* prevents content from hiding behind navbar */
+  z-index: 100;                    /* stays above everything */
+  background: rgba(255, 246, 242, 0.95); /* soft pink background */
+  border-bottom: 3px solid var(--accent);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* gentle depth */
 }
 
-.header__inner{display:flex; align-items:center; justify-content:space-between; height:74px}
-.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit}
-.brand__mark{
-  width:38px; height:38px; display:grid; place-items:center;
-  border:2px solid var(--ink); border-radius:8px;
-  font-family:"Playfair Display", serif; font-weight:800;
-  background:#ffe3ee;
+/* spacing for main content so it’s not hidden under header */
+body {
+  padding-top: 80px;
 }
-.brand__name{font-weight:800; letter-spacing:-.01em}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand__mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  background: #ffe3ee;
+}
+
+.brand__name {
+  font-weight: 800;
+  letter-spacing: 0.5px; /* fix your unfinished property */
+}
+
 .nav{display:flex; gap:24px}
 .nav a{
   color:var(--ink); text-decoration:none; font-weight:700; font-size:var(--step-0);
