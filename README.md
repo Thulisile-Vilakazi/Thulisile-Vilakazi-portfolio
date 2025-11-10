@@ -1,2 +1,2 @@
-# Thulisile-Vilakazi-portfolio
+Thulisile-Vilakazi-portfolio
 Personal portfolio

@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Thulisile Vilakazi — Portfolio</title>
   <meta name="description" content="Thulisile Vilakazi — Law → Tech → Impact. Software Engineering @ WeThinkCode_">
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
+  
 </head>
 <body>
-  <!-- SVG icon sprite (reusable icons) -->
   <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
     <symbol id="icon-linkedin" viewBox="0 0 24 24">
       <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8.98h5V24H0zM8.98 8.98h4.78v2.05h.07c.67-1.26 2.33-2.58 4.79-2.58 4.08 0 5.38 2.57 5.38 6.63V24h-5v-8.03c0-1.92-.03-4.39-2.67-4.39-2.67 0-3.08 2.08-3.08 4.24V24H8.98z"/>
@@ -26,7 +27,6 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="container header__inner">
       <a class="brand" href="#home" aria-label="Go to top">
@@ -42,27 +42,37 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+        <a href="#certifications">Certifications</a>
+        <!-- in your header nav -->
+<a href="#community">Community Engagement</a>
+
+
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- Hero -->
     <section id="home" class="section hero">
       <div class="container hero__grid">
         <div class="hero__text">
           <p class="eyebrow">Software Engineering • WeThinkCode_</p>
 
-          <h1 class="display">Hi, I’m Thulisile Vilakazi </h1>
+          <h1 class="hero-headline">
+  <span class="intro-type" data-text="Hi, I’m Thulisile."></span><br>
+  <span class="intro-tagline">I build efficient, human-centred software that solves real problems through clarity, structure, and impact.</span>
+</h1>
 
-          <p class="lede">
-            A Software Engineering student with a background in law. I care about making complex systems
-            clearer and building practical, human-centred tools — from Python ETL to Java client/server and accessible web apps.
-          </p>
 
           <div class="actions">
             <a class="btn btn--primary" href="#projects">View My Projects</a>
-            <a class="btn btn--ghost" id="cv-link" href="#" rel="noopener">Download CV</a>
+            <a class="btn btn--ghost" id="cv-link"
+   href="assets/Thulisile_Vilakazi_CV_.pdf"
+   target="_blank" rel="noopener">
+  Download CV
+</a>
+
+
+
           </div>
 
           <div class="icons">
@@ -87,7 +97,6 @@
       <div class="bg-blobs" aria-hidden="true"></div>
     </section>
 
-    <!-- About -->
     <section id="about" class="section">
       <div class="container">
         <h2 class="title">About</h2>
@@ -140,19 +149,33 @@
       </div>
     </section>
 
-    <!-- Skills -->
     <section id="skills" class="section section--soft">
-      <div class="container">
-        <h2 class="title">Skills</h2>
-        <ul class="pills">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
-          <li>Python</li><li>Java</li><li>SQL</li><li>Git</li>
-          <li>Docker</li><li>Maven</li>
-        </ul>
-      </div>
-    </section>
+  <div class="container">
+    <h2 class="title">Skills</h2>
 
-    <!-- Projects -->
+    <ul class="skills-icons">
+      <!-- Frontend -->
+      <li title="HTML5"><i class="devicon-html5-plain colored"></i><span>HTML5</span></li>
+      <li title="CSS3"><i class="devicon-css3-plain colored"></i><span>CSS3</span></li>
+      <li title="JavaScript"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></li>
+      <li title="React"><i class="devicon-react-original colored"></i><span>React</span></li>
+
+      <!-- Backend / General -->
+      <li title="Python"><i class="devicon-python-plain colored"></i><span>Python</span></li>
+      <li title="Java"><i class="devicon-java-plain colored"></i><span>Java</span></li>
+      <li title="SQL"><i class="devicon-mysql-plain colored"></i><span>SQL</span></li>
+
+      <!-- Tools -->
+      <li title="Git"><i class="devicon-git-plain colored"></i><span>Git</span></li>
+      <li title="GitHub"><i class="devicon-github-original"></i><span>GitHub</span></li>
+      <li title="GitLab"><i class="devicon-gitlab-plain colored"></i><span>GitLab</span></li>
+      <li title="Maven"><i class="devicon-apache-plain colored"></i><span>Maven</span></li>
+      <li title="Docker"><i class="devicon-docker-plain colored"></i><span>Docker</span></li>
+    </ul>
+  </div>
+</section>
+
+
     <section id="projects" class="section">
       <div class="container">
         <h2 class="title">Projects</h2>
@@ -160,7 +183,113 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <section id="certifications" class="section">
+  <div class="container">
+    <h2 class="title">Certifications</h2>
+
+    <div class="cert-grid">
+      <!-- EXAMPLE CARD 1 -->
+      <article class="cert-card">
+        <div class="cert-top">
+          <img src="assets/certs/wtc-badge.svg" alt="" class="issuer" />
+          <div>
+            <h3 class="cert-name">Software Engineering Foundations</h3>
+            <p class="issuer-name">WeThinkCode_</p>
+            <p class="cert-meta">Issued: 2025 • Credential ID: <span class="mono">WTC-000000</span></p>
+          </div>
+        </div>
+        <div class="cert-actions">
+          <a class="btn btn--primary" href="#" target="_blank" rel="noopener">View Credential</a>
+          <a class="btn btn--ghost" href="assets/certs/Thulisile_Certificate.pdf" target="_blank" rel="noopener">Download PDF</a>
+        </div>
+      </article>
+
+      <!-- EXAMPLE CARD 2 -->
+      <article class="cert-card">
+        <div class="cert-top">
+          <img src="assets/certs/hackathon.svg" alt="" class="issuer" />
+          <div>
+            <h3 class="cert-name">Hackathon Participation</h3>
+            <p class="issuer-name">Mukuru SheHacks</p>
+            <p class="cert-meta">Issued: 2024 • Category: Product Prototype</p>
+          </div>
+        </div>
+        <div class="cert-actions">
+          <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Project Link</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Organizer Page</a>
+        </div>
+      </article>
+
+      <!-- Add more cards as needed -->
+    </div>
+  </div>
+</section>
+<section id="community" class="section">
+  <div class="container">
+    <h2 class="title">Community Engagement</h2>
+
+    <div class="community-grid">
+      <!-- EXAMPLE: Speaker -->
+      <article class="community-card">
+        <div class="comm-top">
+          <div class="comm-icon" aria-hidden="true">🎤</div>
+          <div>
+            <h3 class="comm-title">Lightning Talk: “From Legal Logic to Code Logic”</h3>
+            <p class="comm-meta">Speaker • WeThinkCode_ Partner Day • May 2025 • Cape Town</p>
+          </div>
+        </div>
+        <p class="comm-desc">
+          A 7-minute talk on translating rule-based legal reasoning into robust program structure and tests.
+        </p>
+        <div class="comm-actions">
+          <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Slides</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Event page</a>
+        </div>
+      </article>
+
+      <!-- EXAMPLE: Panelist -->
+      <article class="community-card">
+        <div class="comm-top">
+          <div class="comm-icon" aria-hidden="true">🎯</div>
+          <div>
+            <h3 class="comm-title">Women in Tech Panel</h3>
+            <p class="comm-meta">Panelist • Dev Community Meetup • Mar 2025 • Remote</p>
+          </div>
+        </div>
+        <p class="comm-desc">
+          Discussed accessibility, mentorship, and entering tech from non-traditional backgrounds.
+        </p>
+        <div class="comm-actions">
+          <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Recording</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Recap post</a>
+        </div>
+      </article>
+
+      <!-- EXAMPLE: Hackathon / Expo -->
+      <article class="community-card">
+        <div class="comm-top">
+          <div class="comm-icon" aria-hidden="true">🏆</div>
+          <div>
+            <h3 class="comm-title">Mukuru SheHacks — Loyalty Rewards Hub</h3>
+            <p class="comm-meta">Participant • Product Prototype • Oct 2024</p>
+          </div>
+        </div>
+        <p class="comm-desc">
+          Built an onboarding flow and points logic. Focused on clear UX, data integrity, and inclusion.
+        </p>
+        <div class="comm-actions">
+          <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Project</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Photos</a>
+        </div>
+      </article>
+
+      <!-- Add more cards as needed -->
+    </div>
+  </div>
+</section>
+
+
+
     <section id="contact" class="section section--soft">
       <div class="container contact__grid">
         <article class="card">

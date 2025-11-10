@@ -1,4 +1,3 @@
-// Mobile nav toggle
 const nav = document.getElementById('site-nav');
 const toggle = document.querySelector('.nav-toggle');
 toggle?.addEventListener('click', () => {
@@ -6,7 +5,6 @@ toggle?.addEventListener('click', () => {
   toggle.setAttribute('aria-expanded', String(open));
 });
 
-// Smooth scroll (respects reduced motion)
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -20,13 +18,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// CV link (replace with your real PDF URL)
-document.getElementById('cv-link').href = '#'; // e.g., 'https://your-domain/cv.pdf'
+document.getElementById('cv-link').href = 'assets/Thulisile_Vilakazi_CV_.pdf';
 
-// Projects data
 const projects = [
   {
     title: 'Bus Schedule App (Python ETL)',
@@ -39,13 +34,11 @@ const projects = [
   {
     title: 'Legal Companion App',
     desc: 'Plain-language legal-tech for SA customary marriage law.',
-    image: 'https://placehold.co/1200x700/0f1a30/ffffff?text=Legal+Companion+App',
+    image: 'assets/Legal.png',
     tags: ['Django','UX Writing'],
     github: '',
     demo: ''
   },
-
-
   {
     title: 'Mukuru Loyalty Rewards Hub (SheHacks)',
     desc: 'Hackathon prototype for onboarding and points logic.',
@@ -78,7 +71,6 @@ grid.innerHTML = projects.map(p => {
   `;
 }).join('');
 
-// Contact form (EmailJS optional; fallback shows message)
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 const btn = document.getElementById('send-btn');
@@ -88,13 +80,32 @@ form?.addEventListener('submit', async (e) => {
   status.textContent = '';
   btn.disabled = true; btn.textContent = 'Sending…';
 
-  // Fill and enable if you want EmailJS:
-  // emailjs.sendForm('SERVICE_ID','TEMPLATE_ID',form)
-  //   .then(() => { status.textContent='Thanks! Your message was sent.'; form.reset(); })
-  //   .catch(() => { status.textContent='Could not send via EmailJS. Please use the email button.'; })
-  //   .finally(() => { btn.disabled = false; btn.textContent = 'Send'; });
-
-  // Fallback (no EmailJS configured):
   status.textContent = 'EmailJS not configured. Use the "Email me instead" button.';
   btn.disabled = false; btn.textContent = 'Send';
 });
+(function () {
+  const el = document.querySelector('.intro-type');
+  if (!el) return;
+
+  const text = el.getAttribute('data-text') || '';
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { el.textContent = text; return; }
+
+  el.textContent = '';
+  let i = 0;
+
+  // slightly vary speed; pause a touch after punctuation
+  const base = 80; // ms
+  function next() {
+    if (i >= text.length) return; // done
+    el.textContent += text[i];
+    i++;
+    const ch = text[i - 1];
+    let delay = base + Math.random() * 40;
+    if (',.:—–'.includes(ch)) delay += 120;
+    if (ch === ' ') delay -= 20;
+    setTimeout(next, Math.max(30, delay));
+  }
+  next();
+})();
+
