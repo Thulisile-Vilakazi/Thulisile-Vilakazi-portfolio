@@ -109,3 +109,45 @@ form?.addEventListener('submit', async (e) => {
   next();
 })();
 
+// Community slider (scoped)
+(function(){
+  const slider = document.querySelector('.comm-slider');
+  if(!slider) return;
+
+  const track = slider.querySelector('.slides');
+  const imgs = Array.from(slider.querySelectorAll('img'));
+  const dots = Array.from(slider.querySelectorAll('.dot'));
+  const prev = slider.querySelector('.prev');
+  const next = slider.querySelector('.next');
+
+  let index = 0;
+  let timer = null;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function go(i) {
+    index = (i + imgs.length) % imgs.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, j) => d.setAttribute('aria-selected', j === index ? 'true' : 'false'));
+  }
+
+  function startAuto() {
+    if (prefersReduced) return;
+    stopAuto();
+    timer = setInterval(() => go(index + 1), 4000);
+  }
+  function stopAuto() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  prev.addEventListener('click', () => { go(index - 1); startAuto(); });
+  next.addEventListener('click', () => { go(index + 1); startAuto(); });
+  dots.forEach((d, j) => d.addEventListener('click', () => { go(j); startAuto(); }));
+
+  slider.addEventListener('mouseenter', stopAuto);
+  slider.addEventListener('mouseleave', startAuto);
+
+  // init
+  go(0);
+  startAuto();
+})();
+

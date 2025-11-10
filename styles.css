@@ -426,4 +426,177 @@ body {
   font-weight: 800;
 }
 
+/* Big intro line */
+.intro-type {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;  /* elegant serif look */
+  font-size: clamp(2.8rem, 6vw, 4rem);    /* keeps it large but responsive */
+  font-weight: 800;
+  color: var(--accent);                   /* your pink highlight */
+  line-height: 1.1;
+}
+
+/* Tagline (smaller paragraph below it) */
+.intro-tagline {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  color: var(--muted);
+  max-width: 700px;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+/* Optional overall container adjustment */
+.hero-headline {
+  margin-bottom: 1.2rem;
+}
+
+/* About Section Layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* text + photo */
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  max-width: 700px;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 2px solid #ffe0ee;
+}
+
+/* Stack layout for mobile */
+@media (max-width: 800px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-photo {
+    order: -1;
+    margin-bottom: 24px;
+  }
+  .about-photo img {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* Two-column community layout */
+.community-grid2 {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* content | slider */
+  align-items: start;
+  gap: 40px;
+}
+
+/* Side slider styles (scoped to community) */
+.comm-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 2px solid #ffe0ee;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  background: #fff;
+  isolation: isolate;
+}
+
+.comm-slider .slides {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  transition: transform 500ms ease;
+}
+
+.comm-slider img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Arrows */
+.comm-slider .ctrl {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 2;
+}
+.comm-slider .ctrl:hover { background: #fff; }
+.comm-slider .prev { left: 8px; }
+.comm-slider .next { right: 8px; }
+
+/* Dots */
+.comm-slider .dots {
+  position: absolute;
+  display: flex;
+  gap: 6px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.comm-slider .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #ffd1e4; border: 0; cursor: pointer;
+}
+.comm-slider .dot[aria-selected="true"] { background: var(--accent); }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .comm-slider .slides { transition: none; }
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 900px) {
+  .community-grid2 { grid-template-columns: 1fr; }
+  .comm-slider { max-width: 520px; margin: 0 auto; }
+}
+/* Certifications Section */
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto 0;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cert-list li {
+  background: #fff;
+  border: 1px solid #ffe0ee;
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cert-list li strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* For smaller screens */
+@media (max-width: 600px) {
+  .cert-list li {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+  }
+}
+
+
+
 
