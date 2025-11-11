@@ -24,30 +24,30 @@ document.getElementById('cv-link').href = 'assets/Thulisile_Vilakazi_CV_.pdf';
 
 const projects = [
   {
-    title: 'Bus Schedule App (Python ETL)',
-    desc: 'Parses PDF timetables into structured CSV/JSON with a clean pipeline.',
-    image: 'https://placehold.co/1200x700/162447/ffffff?text=Bus+Schedule+App',
-    tags: ['Python','Pandas','ETL'],
-    github: '',
-    demo: ''
-  },
-  {
-    title: 'Legal Companion App',
-    desc: 'Plain-language legal-tech for SA customary marriage law.',
+    title: 'UbuhleLegal (Legal Education Platform)',
+    desc: 'Django web app that turns SA customary marriage law into clear, accessible guidance with REST endpoints and a well-structured data model.',
     image: 'assets/Legal.png',
-    tags: ['Django','UX Writing'],
-    github: '',
-    demo: ''
+    tags: ['Django', 'PostgreSQL', 'REST API', 'Accessibility'],
+  
   },
   {
     title: 'Mukuru Loyalty Rewards Hub (SheHacks)',
-    desc: 'Hackathon prototype for onboarding and points logic.',
+    desc: 'Hackathon MVP with user auth, points logic, and leaderboards. Built and shipped under time pressure, achieved 2nd place overall.',
     image: 'assets/mukuru_display.png',
-    tags: ['Django','Postgres','Teamwork'],
-    github: '',
-    demo: ''
+    tags: ['Django', 'PostgreSQL', 'Teamwork', 'MVP'],
+    github: 'https://github.com/Thulisile-Vilakazi/SheHacks_2025.git',
+
+  },
+  {
+    title: 'FraudLens AI',
+    desc: 'Exploratory project on AI-driven fraud detection. Analysed transactional data, built preprocessing pipelines, and tested anomaly-detection approaches.',
+    image: 'assets/FraudLense.png',
+    tags: ['Python', 'Data Analysis', 'Anomaly Detection'],
+  
+  
   }
 ];
+
 
 const grid = document.getElementById('project-grid');
 grid.innerHTML = projects.map(p => {
